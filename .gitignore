@@ -1,0 +1,10 @@
+.idea
+__pycache__
+*.pyc
+*.sqlite
+/docs
+/src/db.sqlite3
+**migrations
+
+
+
