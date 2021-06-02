@@ -7,6 +7,13 @@ class ProductModel(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey('categories.CategoryModel', on_delete=models.CASCADE)
 
+    class Meta:
+        verbose_name = 'product'
+        verbose_name_plural = 'products'
+
+    def __str__(self):
+        return self.name
+
 
 class ProviderProductModel(models.Model):
     name = models.CharField(max_length=100)
@@ -17,3 +24,8 @@ class ProviderProductModel(models.Model):
     provide = models.ForeignKey('providers.ProviderModel', on_delete=models.CASCADE)
 
     created = models.DateTimeField(auto_now_add=True)
+
+
+    class Meta:
+        verbose_name = 'provider product'
+        verbose_name_plural = 'provider products'
