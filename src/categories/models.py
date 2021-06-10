@@ -1,5 +1,5 @@
 from django.db import models
-from products.models import ProductModel
+
 
 
 class ProviderCategoryModel(models.Model):
@@ -16,8 +16,6 @@ class ProviderCategoryModel(models.Model):
 class CategoryModel(models.Model):
     name = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
-    number_products = ProductModel.objects.filter().count()
-    number_of_available_providers = ProviderCategoryModel.objects.filter().count()
 
     def __str__(self):
         return self.name

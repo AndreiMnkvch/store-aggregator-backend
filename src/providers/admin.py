@@ -8,7 +8,7 @@ class ProviderProductInLine(admin.TabularInline):
 
 
 class ProviderAdmin(admin.ModelAdmin):
-    inlines = [ProviderProductInLine]
+    inlines = (ProviderProductInLine,)
     list_display = ('name', 'number_products')
 
 admin.site.register(ProviderModel,ProviderAdmin)
